@@ -173,14 +173,16 @@ section h2::after {
 }
 
 /* NEW About Layout with Image + Text */
+/* About Section */
 .about-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* makes responsive */
+  flex-wrap: wrap;
   gap: 30px;
   max-width: 1100px;
   margin: auto;
+  padding: 40px 20px;
 }
 
 .about-image {
@@ -189,7 +191,9 @@ section h2::after {
 }
 
 .about-image img {
-  max-width: 280px;
+  width: 100%;
+  max-width: 280px;   /* desktop image size */
+  height: auto;
   border-radius: 50%;
   border: 4px solid #ff6ec7;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
@@ -198,7 +202,28 @@ section h2::after {
 .about-text {
   flex: 2;
   text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: justify;
+  }
+
+  .about-image img {
+    max-width: 180px;   /* smaller on mobile */
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+}
+
 
 /* Responsive: About Section */
 @media (max-width: 768px) {
@@ -214,6 +239,66 @@ section h2::after {
     margin-bottom: 20px;
   }
 }
+
+/* Education Section */
+#education {
+  padding: 80px 20px;
+  text-align: center;
+  background: #fff; /* same as About/Skills */
+}
+
+#education h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #2b0a3d; /* same heading color */
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.education-card {
+  background: #fff; /* soft background like contact */
+  padding: 20px;
+  border-left: 5px solid #ff6ec7; /* pink accent */
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #2b0a3d;
+}
+
+.education-card p {
+  margin: 5px 0;
+  color: #444;
+}
+
+.education-card .year {
+  font-size: 14px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .education-container {
+    padding: 0 10px;
+  }
+}
+
 
 
 /* Skills */
